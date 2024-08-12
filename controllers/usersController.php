@@ -1,5 +1,8 @@
 <?php
 include './model/usersModel.php';
+require("./PHPMailer/src/PHPMailer.php");
+require("./PHPMailer/src/SMTP.php");
+require("./PHPMailer/src/Exception.php");
 class usersController
 {
     public $usersModel;
@@ -100,6 +103,38 @@ class usersController
                 }
                 $_SESSION['updateUserSuccess'] = true;
                 return header("Location:?action=index");
+            }
+        }
+    }
+    public function sendEmail()
+    {
+        if (isset($_POST['btn-forgotPass'])) {
+            $emailForgot = $_POST['email'];
+            $emailFind = $this->usersModel->getEmail($emailForgot);
+            if (!$emailFind) {
+                $_SESSION['errorEmailForgot'] = "Không tồn tại email bạn đã nhập vui lòng kiểm tra lại";
+                $_SESSION['errorForgot'] = true;
+                return header("Location:?action=index");
+            } else {
+                $password = $emailFind['user_password'];
+                $mail = new PHPMailer\PHPMailer\PHPMailer();
+                $mail->IsSMTP(); // enable SMTP
+                $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+                $mail->SMTPAuth = true; // authentication enabled
+                $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+                $mail->Host = "smtp.gmail.com";
+                $mail->Port = 465; // or 587
+                $mail->IsHTML(true);
+                $mail->Username = "manhtd0707@gmail.com";
+                $mail->Password = "oiyqhmvuknfbview";
+                $mail->SetFrom("manhtd0707@gmail.com");
+                $mail->Subject = mb_encode_mimeheader("Gửi lại mật khẩu của bạn", "UTF-8", "B");
+                $mail->Body = "Mật khẩu của bạn là: $password ";
+                $mail->AddAddress("$emailForgot");
+                if ($mail->Send()) {
+                    $_SESSION['sendEmailSuccess'] = true;
+                    return header("Location:?action=index");
+                }
             }
         }
     }

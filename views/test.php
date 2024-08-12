@@ -1,16 +1,7 @@
 <?php
-// foreach ($data as $value) {
-//     foreach ($value['title'] as $titles) {
-//         foreach ($titles as $title) {
-//             // echo $title;
-//         }
-//     }
-//     foreach ($value['products'] as $products) {
-//         foreach ($products as $product) {
-//             // echo $product;
-//         }
-//     }
-// }
+foreach ($products['title'] as $title) {
+    echo $title['category_name'] . "<br>";
+}
 ?>
 <!-- <!DOCTYPE html>
 <html lang="en">

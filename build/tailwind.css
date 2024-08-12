@@ -1334,6 +1334,10 @@ video {
   width: 100vw;
 }
 
+.w-\[100\%\] {
+  width: 100%;
+}
+
 .max-w-screen-xl {
   max-width: 1280px;
 }
@@ -1719,6 +1723,18 @@ video {
        break-after: column;
 }
 
+.auto-cols-auto {
+  grid-auto-columns: auto;
+}
+
+.auto-cols-fr {
+  grid-auto-columns: minmax(0, 1fr);
+}
+
+.auto-cols-max {
+  grid-auto-columns: max-content;
+}
+
 .grid-flow-row {
   grid-auto-flow: row;
 }
@@ -1737,6 +1753,14 @@ video {
 
 .grid-flow-col-dense {
   grid-auto-flow: column dense;
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-rows-5 {
+  grid-template-rows: repeat(5, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -3717,6 +3741,10 @@ video {
 
 .forced-color-adjust-none {
   forced-color-adjust: none;
+}
+
+.\[hostname\:port\] {
+  hostname: port;
 }
 
 .\[vite\:css\] {

@@ -101,7 +101,12 @@
         <?php
              session_destroy(); }
            ?>
-        <?php  } ?>
+        <?php if(isset($_SESSION['errorForgot'])&&$_SESSION['errorForgot'] ==true){ ?>
+        <script>
+        let errorForgot = true;
+        </script>
+        <?php }?>
+        <?php session_destroy();  } ?>
     </nav>
 
 </header>

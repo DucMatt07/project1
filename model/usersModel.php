@@ -50,10 +50,10 @@ class usersModel
         $stmt = $this->db->query($sql);
         return $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function updateUserRole($id, $role)
+    public function updateUserRole($role, $id)
     {
         $sql = "UPDATE users SET role = ? WHERE id = ?";
         $stmt = $this->db->prepare($sql);
-        return $stmt->execute([$id, $role]);
+        return $stmt->execute([$role, $id]);
     }
 }

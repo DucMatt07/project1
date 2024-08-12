@@ -32,4 +32,17 @@ class homeController
             return header("Location:?action=productDetails&id=$productId");
         }
     }
+    public function goToType($id)
+    {
+        $category = $this->homeModel->renderCategory();
+        $products =   $this->homeModel->getProductsAndTypes($id);
+        return include './views/productType.php';
+    }
+    public function test($id)
+    {
+        $category = $this->homeModel->renderCategory();
+        $products =   $this->homeModel->getProductsAndTypes($id);
+        var_dump($products);
+        return include './views/test.php';
+    }
 }

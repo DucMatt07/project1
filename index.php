@@ -70,7 +70,13 @@ switch ($action) {
         $adminController->updateUserRole($_GET['id']);
         break;
     case 'test':
-        $adminController->test();
+        $homeController->test(1);
+        break;
+    case 'goToType':
+        $homeController->goToType($_GET['id']);
+        break;
+    case 'sendEmail':
+        $usersController->sendEmail();
         break;
     default:
         echo "Error";

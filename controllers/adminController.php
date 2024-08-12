@@ -20,12 +20,6 @@ class adminController
         }
         return include_once './views/admin.php';
     }
-    public function test()
-    {
-        $users = $this->usersModel->getAllUser();
-        var_dump($users);
-        include './views/test.php';
-    }
     public function goToUpdate($id, $categoryID)
     {
         $product = $this->adminModel->getProduct($id);
@@ -53,7 +47,6 @@ class adminController
             }
             return header("Location:?action=admin&id=1");
         }
-        return include './views/test.php';
     }
     public function goToCreate()
     {

@@ -22,7 +22,7 @@ class homeModel
     //         $stmt = $this->db->query($sql);
     //         return $phones = $stmt->fetchAll(PDO::FETCH_ASSOC);
     //     }
-    private function getProductsAndTypes($id)
+    public function getProductsAndTypes($id)
     {
         $sql_products = "SELECT pr.product_name, pr.product_sale, pr.product_img, pr.product_old_price, pr.product_new_price, pr.product_smember, pr.product_id
                 FROM product_type AS pt
