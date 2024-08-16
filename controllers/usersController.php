@@ -85,21 +85,30 @@ class usersController
             $password = $_POST['password'];
             $newPassword  = $_POST['newPassword'];
             $userName = $_POST['userName'];
+            $address = $_POST['address'];
             $img = $_FILES['img'];
             $user = $this->usersModel->getUser($userName);
-            if ($password !== $user['user_password']) {
+            if ($password !== $user['user_password'] && $password !== "") {
                 $_SESSION['errorPasswordOld'] = "Mật khẩu cũ không đúng";
                 return header("Location:?action=infoUser&userName=$userName");
+            } else if ($password == "" && $newPassword !== "") {
+                $_SESSION['errorPasswordOld'] = "Bạn chưa nhập mật khẩu cũ";
+                return header("Location:?action=infoUser&userName=$userName");
             } else {
-                if ($img['error'] === UPLOAD_ERR_OK) {
+                if ($img['error'] === UPLOAD_ERR_OK && !empty($newPassword)) {
                     $imgName = $img['name'];
                     $dir = $folder . $imgName;
                     move_uploaded_file($img['tmp_name'], $dir);
-                    $this->usersModel->updateUser($newPassword, $imgName, $id);
+                    $this->usersModel->updateUser($newPassword, $imgName, $address, $id);
+                } else if ($img['error'] === UPLOAD_ERR_OK && empty($newPassword)) {
+                    $imgName = $img['name'];
+                    $dir = $folder . $imgName;
+                    move_uploaded_file($img['tmp_name'], $dir);
+                    $this->usersModel->updateUser($newPassword, $imgName, $address, $id);
                 } else {
                     $imgName = $img['name'];
                     $imgName = null;
-                    $this->usersModel->updateUser($newPassword, $imgName, $id);
+                    $this->usersModel->updateUser($newPassword, $imgName, $address, $id);
                 }
                 $_SESSION['updateUserSuccess'] = true;
                 return header("Location:?action=index");

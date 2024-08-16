@@ -36,8 +36,8 @@
 </section>
 <!-- SignInSuccess -->
 <?php if (isset($_SESSION['sendEmailSuccess'])) { ?>
-<script>
-alert("Gửi lại mật khẩu thành công vui lòng kiểm tra email của bạn")
-</script>
+    <script>
+        alert("Gửi lại mật khẩu thành công vui lòng kiểm tra email của bạn")
+    </script>
 <?php session_destroy();
 } ?>

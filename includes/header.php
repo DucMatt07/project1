@@ -17,11 +17,12 @@
                 <p class="text-[14px]">Hà Nội</p>
             </div>
         </a>
-        <form action="" method="post" class="w-[300px] h-[34px] relative">
+        <form action="?action=searchProduct" method="post" class="w-[300px] h-[34px] relative">
             <label for="search" class="absolute top-[50%] translate-y-[-50%] left-[10px]">
                 <i class="fa-solid fa-magnifying-glass text-[#707070] cursor-pointer"></i>
             </label>
-            <input type="text" class="w-full h-full rounded-[10px] px-[30px]" placeholder="Bạn cần tìm gì ?" />
+            <input type="text" name="nameProduct" class="w-full h-full rounded-[10px] px-[30px]"
+                placeholder="Bạn cần tìm gì ?" />
             <button type="none" id="search"></button>
         </form>
         <a href="#"
@@ -63,7 +64,7 @@
         <div class="user w-[130px] flex">
             <span class="text-[#fff] text-[12px]">Xin chào: <?= $_SESSION['user_name'] ?>
                 <a class="text-[#fff] text-[12px] underline"
-                    href="?action=infoUser&userName=<?= $_SESSION['user_name']?>">Thông tin tài khoản</a>
+                    href="?action=infoUser&userName=<?= $_SESSION['user_name'] ?>">Thông tin tài khoản</a>
             </span>
         </div>
         <a href="?action=logout"
@@ -93,20 +94,23 @@
         let errorsLogin = true;
         </script>
         <?php
-             session_destroy(); } ?>
+                session_destroy();
+            } ?>
         <?php if (isset($_SESSION['errorsSignIn']) && $_SESSION['errorsSignIn'] == true) { ?>
         <script>
         let errorsSignIn = true;
         </script>
         <?php
-             session_destroy(); }
-           ?>
-        <?php if(isset($_SESSION['errorForgot'])&&$_SESSION['errorForgot'] ==true){ ?>
+                session_destroy();
+            }
+            ?>
+        <?php if (isset($_SESSION['errorForgot']) && $_SESSION['errorForgot'] == true) { ?>
         <script>
         let errorForgot = true;
         </script>
-        <?php }?>
-        <?php session_destroy();  } ?>
+        <?php } ?>
+        <?php session_destroy();
+        } ?>
     </nav>
 
 </header>

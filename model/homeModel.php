@@ -42,6 +42,34 @@ class homeModel
             "type" =>  $types
         ];
     }
+    public function getSliders()
+    {
+        $sql = "SELECT * FROM sliders";
+        $stmt = $this->db->query($sql);
+        return $sliders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    private function selectTop5($id)
+    {
+        $sql_products = "SELECT pr.product_name, pr.product_sale, pr.product_img, pr.product_old_price, pr.product_new_price, pr.product_smember, pr.product_id
+        FROM product_type AS pt
+        INNER JOIN products AS pr ON pr.product_type_id = pt.id
+        WHERE pt.category_id = $id
+        ORDER BY pr.view DESC
+        LIMIT 5";
+        $stmt_products = $this->db->query($sql_products);
+        $products = $stmt_products->fetchAll(PDO::FETCH_ASSOC);
+        $sql_types = "SELECT type_name FROM product_type WHERE category_id = $id";
+        $stmt_types = $this->db->query($sql_types);
+        $types = $stmt_types->fetchAll(PDO::FETCH_ASSOC);
+        $sql_title = "SELECT category_name FROM category WHERE id = $id";
+        $stmt_title = $this->db->query($sql_title);
+        $title = $stmt_title->fetchAll(PDO::FETCH_ASSOC);
+        return [
+            'title' => $title,
+            'products' =>  $products,
+            "type" =>  $types
+        ];
+    }
     public function renderProductsAndTypes()
     {
         $sql = "SELECT MAX(category_id) AS max_category_id FROM product_type";
@@ -50,8 +78,15 @@ class homeModel
         $maxCategory = $result['max_category_id'];
         $data = [];
         for ($i = 1; $i <= $maxCategory; $i++) {
-            $data[] = $this->getProductsAndTypes($i);
+            $data[] = $this->selectTop5($i);
         }
         return $data;
+    }
+    public function findProduct($productName)
+    {
+        $sql = "SELECT * FROM products WHERE product_name LIKE ? ";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['%' . $productName . '%']);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

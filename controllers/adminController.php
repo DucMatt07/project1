@@ -1,14 +1,17 @@
 <?php
 include './model/adminModel.php';
 include_once './model/usersModel.php';
+include_once './model/homeModel.php';
 class adminController
 {
     public $adminModel;
     public $usersModel;
+    public $homeModel;
     public function __construct()
     {
         $this->adminModel = new adminModel;
         $this->usersModel = new usersModel;
+        $this->homeModel = new homeModel;
     }
     public function goToAdmin($id)
     {
@@ -36,14 +39,17 @@ class adminController
             $newPrice = $_POST['newPrice'];
             $img  = $_FILES['img'];
             $typeID = $_POST['option'];
+            $content1 = $_POST['content1'];
+            $content2 = $_POST['content2'];
+            $content3 = $_POST['content3'];
             if ($img['error'] === UPLOAD_ERR_OK) {
                 $imgName = $img['name'];
                 $dir = $folder . $imgName;
                 move_uploaded_file($img['tmp_name'], $dir);
-                $this->adminModel->updateProduct($name, $imgName, $oldPrice, $newPrice, $typeID, $id);
+                $this->adminModel->updateProduct($name, $imgName, $oldPrice, $newPrice, $typeID, $content1, $content2, $content3, $id);
             } else {
                 $imgName = null;
-                $this->adminModel->updateProduct($name, $imgName, $oldPrice, $newPrice, $typeID, $id);
+                $this->adminModel->updateProduct($name, $imgName, $oldPrice, $newPrice, $typeID, $content1, $content2, $content3, $id);
             }
             return header("Location:?action=admin&id=1");
         }
@@ -63,10 +69,13 @@ class adminController
         $typeID = $_POST['option'];
         $sale = $_POST['sale'];
         $smember = $_POST['smember'];
+        $content1 = $_POST['content1'];
+        $content2 = $_POST['content2'];
+        $content3 = $_POST['content3'];
         $imgName = $img['name'];
         $dir = $folder . $imgName;
         move_uploaded_file($img['tmp_name'], $dir);
-        $this->adminModel->createProduct($name, $imgName, $oldPrice, $newPrice, $sale, $smember, $typeID);
+        $this->adminModel->createProduct($name, $imgName, $oldPrice, $newPrice, $sale, $smember, $typeID, $content1, $content2, $content3);
         return header("Location:?action=admin&id=1");
     }
     public function startDelete($id)
@@ -95,6 +104,68 @@ class adminController
             $role = $_POST['role'];
             $this->usersModel->updateUserRole($role, $id);
             return header("Location:?action=adminUser");
+        }
+    }
+    public function goToAdminSlider()
+    {
+        $sliders = $this->homeModel->getSliders();
+        return include './views/adminSlider.php';
+    }
+    public function goToUpdateSlider($id)
+    {
+        $slider = $this->adminModel->getSlider($id);
+        return include './views/updateSlider.php';
+    }
+    public function startUpdateSlider($id)
+    {
+        if (isset($_POST['btn-update-slider'])) {
+            $folder = './img/';
+            $nameProduct = $_POST['nameProduct'];
+            $content = $_POST['content'];
+            $img = $_FILES['img'];
+            if ($img['error'] === UPLOAD_ERR_OK) {
+                $imgName = $img['name'];
+                $dir = $folder . $imgName;
+                move_uploaded_file($img['tmp_name'], $dir);
+                $this->adminModel->updateSlider($imgName, $nameProduct, $content, $id);
+            } else {
+                $imgName = null;
+                $this->adminModel->updateSlider($imgName, $nameProduct, $content, $id);
+            }
+            return header("Location:?action=goToUpdateSlider&id=$id");
+        }
+    }
+    public function goToAdminCategory()
+    {
+        $categories = $this->adminModel->getAllCategory();
+        return include './views/adminCategory.php';
+    }
+    public function startCreateCategory()
+    {
+        if (isset($_POST['btn-createCategory'])) {
+            $categoryName = $_POST['name'];
+            $icon = $_POST['icon'];
+            $this->adminModel->createCategory($categoryName, $icon);
+            return header("Location:?action=adminCategory");
+        }
+    }
+    public function deleteCategory($id)
+    {
+        $this->adminModel->deleteCategory($id);
+        return header("Location:?action=adminCategory");
+    }
+    public function goToUpdateCategory($id)
+    {
+        $category = $this->adminModel->getCategory($id);
+        return include './views/updateCategory.php';
+    }
+    public function startUpdateCategory($id)
+    {
+        if (isset($_POST['btn-updateCategory'])) {
+            $categoryName = $_POST['name'];
+            $icon = $_POST['icon'];
+            $this->adminModel->startUpdateCategory($categoryName, $icon, $id);
+            return header("Location:?action=adminCategory");
         }
     }
 }

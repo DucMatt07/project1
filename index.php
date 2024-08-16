@@ -40,34 +40,70 @@ switch ($action) {
         $usersController->startUpdateUser($_GET['id']);
         break;
     case 'goToUpdate':
-        $adminController->goToUpdate($_GET['id'], $_GET['categoryID']);
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->goToUpdate($_GET['id'], $_GET['categoryID']);
+        } else {
+            header("Location:?action=index");
+        }
         break;
     case 'startUpdate':
-        $adminController->startUpdate($_GET['id']);
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->startUpdate($_GET['id']);
+        } else {
+            header("Location:?action=index");
+        }
         break;
     case 'goToCreate':
-        $adminController->goToCreate();
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->goToCreate();
+        } else {
+            header("Location:?action=index");
+        }
         break;
     case 'startCreate':
-        $adminController->startCreate();
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->startCreate();
+        } else {
+            header("Location:?action=index");
+        }
         break;
     case 'delete':
-        $adminController->startDelete($_GET['id']);
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->startDelete($_GET['id']);
+        } else {
+            header("Location:?action=index");
+        }
         break;
     case 'sendComment':
         $homeController->sendComment();
         break;
     case 'goToComment':
-        $adminController->goToAdminComment($_GET['id']);
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->goToAdminComment($_GET['id']);
+        } else {
+            header("Location:?action=index");
+        }
         break;
     case 'deleteComment':
-        $adminController->deleteComment($_GET['id'], $_GET['productId']);
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->deleteComment($_GET['id'], $_GET['productId']);
+        } else {
+            header("Location:?action=index");
+        }
         break;
     case 'adminUser':
-        $adminController->goToAdminUser();
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->goToAdminUser();
+        } else {
+            header("Location:?action=index");
+        }
         break;
     case 'updateUserRole':
-        $adminController->updateUserRole($_GET['id']);
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->updateUserRole($_GET['id']);
+        } else {
+            header("Location:?action=index");
+        }
         break;
     case 'test':
         $homeController->test(1);
@@ -77,6 +113,72 @@ switch ($action) {
         break;
     case 'sendEmail':
         $usersController->sendEmail();
+        break;
+    case 'searchProduct':
+        $homeController->searchProduct();
+        break;
+    case 'adminSlider':
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->goToAdminSlider();
+        } else {
+            header("Location:?action=index");
+        }
+        break;
+    case 'goToUpdateSlider':
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->goToUpdateSlider($_GET['id']);
+        } else {
+            header("Location:?action=index");
+        }
+        break;
+    case 'startUpdateSlider':
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->startUpdateSlider($_GET['id']);
+        } else {
+            header("Location:?action=index");
+        }
+        break;
+    case 'adminCategory':
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->goToAdminCategory();
+        } else {
+            header("Location:?action=index");
+        }
+        break;
+    case 'goToCreateCategory':
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            include './views/createCategory.php';
+        } else {
+            header("Location:?action=index");
+        }
+        break;
+    case 'startCreateCategory':
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->startCreateCategory();
+        } else {
+            header("Location:?action=index");
+        }
+        break;
+    case 'deleteCategory':
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->deleteCategory($_GET['id']);
+        } else {
+            header("Location:?action=index");
+        }
+        break;
+    case 'goToUpdateCategory':
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->goToUpdateCategory($_GET['id']);
+        } else {
+            header("Location:?action=index");
+        }
+        break;
+    case 'startUpdateCategory':
+        if (isset($_SESSION['user_name']) && $_SESSION['role'] == 1) {
+            $adminController->startUpdateCategory($_GET['id']);
+        } else {
+            header("Location:?action=index");
+        }
         break;
     default:
         echo "Error";

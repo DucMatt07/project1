@@ -23,6 +23,11 @@
                     <ul
                         class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white ">
                         <li>
+                            <a href="?action=adminCategory"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Quản
+                                lí danh mục</a>
+                        </li>
+                        <li>
                             <a href="?action=admin&id=1"
                                 class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                                 aria-current="page"> Sản phẩm</a>
@@ -33,17 +38,11 @@
                                 Người dùng</a>
                         </li>
                         <li>
-                            <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Services</a>
+                            <a href="?action=adminSlider"
+                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Quản
+                                lí slider</a>
                         </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Pricing</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Contact</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -63,7 +62,8 @@
                 <?php } ?>
             </select>
             <a href="?action=goToCreate"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center absolute bottom-0 right-0">Create</a>
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center absolute bottom-0 right-0">Thêm
+                sản phẩm</a>
         </div>
         <table class="w-[80%] my-[0] mx-auto text-center mt-[30px]">
             <tr class="flex gap-[40px] font-bold ">
@@ -71,7 +71,7 @@
                 <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">Img</td>
                 <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">Old price</td>
                 <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">New price</td>
-                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">Title</td>
+                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">Lượt xem</td>
                 <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">Xoá sản phẩm</td>
                 <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">Sửa sản phẩm</td>
                 <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">Bình luận
@@ -84,8 +84,7 @@
                 </td>
                 <td class="  p-[10px] w-[10%]"><?= $product['product_old_price'] ?></td>
                 <td class="  p-[10px] w-[10%]"><?= $product['product_new_price'] ?></td>
-                <td class="  p-[10px] w-[10%] line-clamp-6">Màn hình chính Dynamic AMOLED 2X 7.6 inch cho
-                    trải nghiệm giải trí, làm việc đỉnh cao.</td>
+                <td class="  p-[10px] w-[10%] line-clamp-6"><?= $product['view'] ?></td>
                 <td class="flex justify-center items-center p-[10px] w-[10%]"><a
                         href="?action=delete&id=<?= $product['product_id'] ?>"
                         class="delete-product rounded-[5px] bg-[red] py-[10px] px-[30px] text-center text-[#fff]">Xoá</a>

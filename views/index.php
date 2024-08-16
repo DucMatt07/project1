@@ -32,60 +32,25 @@
                 <!-- SLIDER -->
                 <div class="slider w-[767.5px] h-[450px] mt-[20px] rounded-b-[10px] shadow-menu bg-[#ffffff]">
                     <div id="slider-container-img" class=" w-full h-[75%] relative overflow-hidden">
-
-                        <img src="./img/slider-1.webp" class="w-full h-full object-cover absolute left-[0%]" alt="" />
-                        <img src="./img/slider-2.webp" class="w-full h-full object-cover absolute left-[-100%]"
-                            alt="" />
-                        <img src="./img/slider-3.webp" class="w-full h-full object-cover absolute left-[-100%]"
-                            alt="" />
-                        <img src="./img/slider-4.webp" class="w-full h-full object-cover absolute left-[-100%]"
-                            alt="" />
-                        <img src="./img/slider-5.webp" class="w-full h-full object-cover absolute left-[-100%]"
-                            alt="" />
+                        <?php foreach ($sliders as $slider) { ?>
+                            <img src="./img/<?= $slider['img'] ?>"
+                                class="w-full h-full object-cover absolute first:left-[0%] left-[-100%]" alt="" />
+                        <?php } ?>
                     </div>
                     <div class="slider-title w-full h-[25%] flex">
-                        <div
-                            class="slider-title-item w-[20%] hover:bg-[#eee] cursor-pointer flex items-center justify-center active  ">
-                            <p class="text-[13px]">
-                                SAMSUNG M55
-                                <br />
-                                Giá tốt chốt ngay
-                            </p>
-                        </div>
-                        <div
-                            class="slider-title-item w-[20%] flex items-center justify-center hover:bg-[#eee] cursor-pointer">
-                            <p class="text-[13px]">
-                                POCO M6
-                                <br />
-                                Giá chỉ 3.89 triệu
-                            </p>
-                        </div>
-                        <div
-                            class="slider-title-item w-[20%] flex items-center justify-center hover:bg-[#eee] cursor-pointer">
-                            <p class="text-[13px]">
-                                ASUS TUF GAMING
-                                <br />
-                                Giá chỉ 16.49 triệu
-                            </p>
-                        </div>
-                        <div
-                            class="slider-title-item w-[20%] flex items-center justify-center hover:bg-[#eee] cursor-pointer">
-                            <p class="text-[13px]">
-                                JBL T115BT
-                                <br />
-                                Giá chỉ 250k
-                            </p>
-                        </div>
-                        <div
-                            class="slider-title-item w-[20%] flex items-center justify-center hover:bg-[#eee] cursor-pointer">
-                            <p class="text-[13px]">
-                                PHILIPS PPM3522
-                                <br />
-                                Giá chỉ 1.79 triệu
-                            </p>
-                        </div>
+                        <?php foreach ($sliders as $slider) { ?>
+                            <div
+                                class="slider-title-item w-[20%] hover:bg-[#eee] cursor-pointer flex items-center justify-center  ">
+                                <p class="text-[13px]">
+                                    <?= $slider['slider_product_name'] ?>
+                                    <br />
+                                    <?= $slider['content'] ?>
+                                </p>
+                            </div>
+                        <?php  } ?>
                     </div>
                 </div>
+                <script src="./assets/js/slider.js"></script>
                 <!-- RIGHT BANNER -->
                 <div class="right-banner w-[265px] h-[450px] flex flex-wrap justify-between flex-col mt-[20px]">
                     <a href="#" class="shadow-menu h-[25%] block w-full rounded-[10px]">

@@ -16,7 +16,8 @@
             <div class="main-container mt-[12px]  w-[1200px] my-[0] mx-[auto] h-[30px]">
                 <ul class="flex h-full items-center">
                     <li>
-                        <a href="?action=index" class="text-[12px] text-[#707070] mr-[10px]  flex gap-[10px] items-center  ">
+                        <a href="?action=index"
+                            class="text-[12px] text-[#707070] mr-[10px]  flex gap-[10px] items-center  ">
                             <i class="fa-solid fa-house"></i>
                             <p>Trang chủ</p>
                         </a>
@@ -51,7 +52,7 @@
                         <i class="fa-solid fa-star text-[12px] text-[#f59e0b]"></i>
                         <i class="fa-solid fa-star text-[12px] text-[#f59e0b]"></i>
                         <i class="fa-solid fa-star text-[12px] text-[#f59e0b]"></i>
-                        <span class="text-[16px] text-[#4a4a4a]"> 15 lượt xem</span>
+                        <span class="text-[16px] text-[#4a4a4a]"> <?= $product['view'] ?> lượt xem</span>
                     </div>
                 </div>
                 <div class="line border-none block   mt-[10px] mb-[15px]" style="height: 2px;background-color:#f5f5f5">
@@ -62,23 +63,21 @@
                             bg-[linear-gradient(90deg,_#dd5e89,_#f7bb97)] relative
                             ">
                             <i class="fa-regular fa-heart absolute left-[10px] top-[10px] text-[13px]   "></i>
-                            <div class="box-product flex p-[10px] text-[14px] items-center gap-[20px] justify-start  w-full ">
-                                <img class="rounded-[10px] h-[250px] p-[10px] w-[250px] bg-[#fff]" src="./img/<?= $product['product_img'] ?>" alt="">
+                            <div
+                                class="box-product flex p-[10px] text-[14px] items-center gap-[20px] justify-start  w-full ">
+                                <img class="rounded-[10px] h-[250px] p-[10px] w-[250px] bg-[#fff]"
+                                    src="./img/<?= $product['product_img'] ?>" alt="">
                                 <div class="box-title text-[#fff]">
                                     <p class="text-[18px] relative bottom-[5px] uppercase mb-[5px] font-semibold  ">
                                         Tính
                                         năng nổi bật
                                     </p>
                                     <div class="list-title-product">
-                                        <ul class="text-[14px] text-[#fff] max-h-[200px] overflow-y-auto list-disc list-inside">
-                                            <li class="mb-[5px] last:mb-0 ">Trải nghiệm đỉnh cao với hiệu năng
-                                                mạnh mẽ từ vi xử lý tân tiến, kết hợp cùng RAM 12GB cho khả năng đa
-                                                nhiệm mượt mà.</li>
-                                            <li class="mb-[5px] last:mb-0 ">Lưu trữ thoải mái mọi ứng dụng, hình ảnh và
-                                                video với bộ nhớ trong 256GB.</li>
-                                            <li class="mb-[5px] last:mb-0 ">Nâng tầm nhiếp ảnh di động với hệ thống
-                                                camera tiên tiến, cho ra đời những bức ảnh và video chất lượng chuyên
-                                                nghiệp.</li>
+                                        <ul
+                                            class="text-[14px] text-[#fff] max-h-[200px] overflow-y-auto list-disc list-inside">
+                                            <li class="mb-[5px] last:mb-0 "><?= $product['content1'] ?></li>
+                                            <li class="mb-[5px] last:mb-0 "><?= $product['content2'] ?></li>
+                                            <li class="mb-[5px] last:mb-0 "><?= $product['content3'] ?></li>
                                             <li class="mb-[5px] last:mb-0 ">Thiết kế sang trọng, đẳng cấp, khẳng định
                                                 phong cách thời thượng.</li>
                                         </ul>
@@ -89,7 +88,8 @@
                         <div class="product-info w-full flex">
                             <div class="product-info-left w-[50%] p-[.75rem]
                             ">
-                                <div class="box-info-product  border-[1px] border-solid border-[#e5e7eb] rounded-[10px] px-[10px] pt-[10px] w-full">
+                                <div
+                                    class="box-info-product  border-[1px] border-solid border-[#e5e7eb] rounded-[10px] px-[10px] pt-[10px] w-full">
                                     <div class="box-title text-[#444] text-[16px] font-bold mb-[10px] ">Thông tin sản
                                         phẩm</div>
                                     <div class="box-content text-[12px]">
@@ -145,8 +145,10 @@
                                 <p class="mb-[5px] text-[14px]">
                                     Có <strong>41</strong> cửa hàng có sản phẩm
                                 </p>
-                                <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg   ">
-                                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg text-nowrap text-[12px] truncate flex items-center gap-[5px] ">
+                                <ul
+                                    class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg   ">
+                                    <li
+                                        class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg text-nowrap text-[12px] truncate flex items-center gap-[5px] ">
                                         <i class="fa-solid fa-phone text-[#d70018]"></i>
                                         <a href="tel:02871083355" class="text-[#d70018]">02871083355</a>
                                         <div class="address text-[#0864c1]">
@@ -155,7 +157,8 @@
                                                 55B Trần Quang Khải, P. Tân Định, Q. 1</a>
                                         </div>
                                     </li>
-                                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg text-nowrap text-[12px] truncate flex items-center gap-[5px] ">
+                                    <li
+                                        class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg text-nowrap text-[12px] truncate flex items-center gap-[5px] ">
                                         <i class="fa-solid fa-phone text-[#d70018]"></i>
                                         <a href="tel:02871083355" class="text-[#d70018]">02871083355</a>
                                         <div class="address text-[#0864c1]">
@@ -164,7 +167,8 @@
                                                 55B Trần Quang Khải, P. Tân Định, Q. 1</a>
                                         </div>
                                     </li>
-                                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg text-nowrap text-[12px] truncate flex items-center gap-[5px] ">
+                                    <li
+                                        class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg text-nowrap text-[12px] truncate flex items-center gap-[5px] ">
                                         <i class="fa-solid fa-phone text-[#d70018]"></i>
                                         <a href="tel:02871083355" class="text-[#d70018]">02871083355</a>
                                         <div class="address text-[#0864c1]">
@@ -173,7 +177,8 @@
                                                 55B Trần Quang Khải, P. Tân Định, Q. 1</a>
                                         </div>
                                     </li>
-                                    <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg text-nowrap text-[12px] truncate flex items-center gap-[5px] ">
+                                    <li
+                                        class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg text-nowrap text-[12px] truncate flex items-center gap-[5px] ">
                                         <i class="fa-solid fa-phone text-[#d70018]"></i>
                                         <a href="tel:02871083355" class="text-[#d70018]">02871083355</a>
                                         <div class="address text-[#0864c1]">
@@ -198,19 +203,22 @@
                     </div>
                     <div class="section-right w-[40%] box-border">
                         <div class="list-price-memory w-full flex justify-center">
-                            <a href="#" class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[33.33333%]">
+                            <a href="#"
+                                class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[33.33333%]">
                                 <div class="phone-memory line-clamp-3 w-full font-semibold text-center "><strong>12GB
                                         1TB</strong>
                                 </div>
                                 <div class="price-memory">38.490.000 đ</div>
                             </a>
-                            <a href="#" class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[33.33333%]">
+                            <a href="#"
+                                class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[33.33333%]">
                                 <div class="phone-memory line-clamp-3 w-full font-semibold text-center "><strong>12GB
                                         1TB</strong>
                                 </div>
                                 <div class="price-memory">38.490.000 đ</div>
                             </a>
-                            <a href="#" class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[33.33333%]">
+                            <a href="#"
+                                class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[33.33333%]">
                                 <div class="phone-memory line-clamp-3 w-full font-semibold text-center "><strong>12GB
                                         1TB</strong>
                                 </div>
@@ -221,19 +229,22 @@
                             <p class="text-[14px] text-[#444] font-bold mb-[10px] w-full">Chọn màu để xem giá và chi
                                 nhánh có
                                 hàng</p>
-                            <a href="#" class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[30%]">
+                            <a href="#"
+                                class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[30%]">
                                 <div class="phone-memory line-clamp-3 w-full font-semibold text-center ">
                                     <strong>Xám</strong>
                                 </div>
                                 <div class="price-memory">38.490.000 đ</div>
                             </a>
-                            <a href="#" class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[30%]">
+                            <a href="#"
+                                class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[30%]">
                                 <div class="phone-memory line-clamp-3 w-full font-semibold text-center ">
                                     <strong>Vàng</strong>
                                 </div>
                                 <div class="price-memory">38.490.000 đ</div>
                             </a>
-                            <a href="#" class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[33.333%]">
+                            <a href="#"
+                                class="border-[1px] border-solid border-[#d1d5db] flex flex-wrap items-center justify-center rounded-[8px] text-[#444] text-[12px] mb-[10px] mr-[10px] overflow-hidden py-[5px] px-[4px] w-[33.333%]">
                                 <div class="phone-memory line-clamp-3 w-full font-semibold text-center ">
                                     <strong>Đen</strong>
                                 </div>
@@ -252,17 +263,23 @@
                                     <span class="text-[#202020] text-[13px] font-normal ">Khi thu cũ lên đời</span>
                                 </div>
                             </div>
-                            <div class="col-6 w-[50%] flex items-center justify-center border-[1px] border-solid border-[red] shadow-price rounded-[5px] p-[5px] flex-wrap relative">
-                                <strong class="new-price text-[#fd2424] text-[16px] w-full text-center"><?= $product['product_new_price'] ?>đ</strong>
+                            <div
+                                class="col-6 w-[50%] flex items-center justify-center border-[1px] border-solid border-[red] shadow-price rounded-[5px] p-[5px] flex-wrap relative">
+                                <strong
+                                    class="new-price text-[#fd2424] text-[16px] w-full text-center"><?= $product['product_new_price'] ?>đ</strong>
                                 <br>
-                                <span class="old-price text-[13px] font-normal line-through text-[#4e4e4e]"><?= $product['product_old_price'] ?>đ</span>
-                                <div class="arrow-down border-[10px] border-solid border-[transparent] border-t-[#fd2424] absolute left-[50%] translate-x-[-50%] bottom-[-35%] ">
+                                <span
+                                    class="old-price text-[13px] font-normal line-through text-[#4e4e4e]"><?= $product['product_old_price'] ?>đ</span>
+                                <div
+                                    class="arrow-down border-[10px] border-solid border-[transparent] border-t-[#fd2424] absolute left-[50%] translate-x-[-50%] bottom-[-35%] ">
                                 </div>
                             </div>
                         </div>
-                        <div class="sale-smember w-full bg-[#fff3f3] border-[1px] border-solid border-[#fde2e2] rounded-[5px] p-[8px] text-[14px] text-[#262626]">
+                        <div
+                            class="sale-smember w-full bg-[#fff3f3] border-[1px] border-solid border-[#fde2e2] rounded-[5px] p-[8px] text-[14px] text-[#262626]">
                             <p>
-                                Tiết kiệm thêm đến <strong class="text-[#d70018] font-bold"><?= $product['product_smember'] ?>đ</strong>
+                                Tiết kiệm thêm đến <strong
+                                    class="text-[#d70018] font-bold"><?= $product['product_smember'] ?>đ</strong>
                                 cho Smember
                             </p>
                             <p>
@@ -277,11 +294,13 @@
                         </div>
                         <div class="btn-buy-container mb-[0.75rem] mt-[0.75rem] flex flex-wrap">
                             <div class="btn-buy-now w-full flex gap-[10px]">
-                                <button class="w-[80%] bg-[linear-gradient(#f52f32,_#e11b1e)] rounded-[10px] text-[#fff] h-[60px] mb-[10px] flex flex-col items-center justify-center ">
+                                <button
+                                    class="w-[80%] bg-[linear-gradient(#f52f32,_#e11b1e)] rounded-[10px] text-[#fff] h-[60px] mb-[10px] flex flex-col items-center justify-center ">
                                     <strong>MUA NGAY</strong>
                                     <span class="text-[14px]">(Giao nhanh từ 2 giờ hoặc nhận tại cửa hàng)</span>
                                 </button>
-                                <button class="w-[20%] rounded-[10px] border-[2px] border-solid border-[#e04040] h-[60px] flex flex-col justify-center items-center">
+                                <button
+                                    class="w-[20%] rounded-[10px] border-[2px] border-solid border-[#e04040] h-[60px] flex flex-col justify-center items-center">
                                     <img class="w-[30px] h-[30px] object-contain" src="./img/add-to-cart.webp" alt="">
                                     <span class="text-[#e04040] text-[7.5px] font-semibold">Thêm vào giỏ</span>
                                 </button>
@@ -300,13 +319,16 @@
                                     <span class="text-[12px] text-[#fff]">(Không phí chuyển đổi 3 - 6 tháng)</span>
                                 </button>
                             </div>
-                            <div class="btn-trade-update w-full rounded-[10px] bg-[#ec8104] flex flex-col text-[#fff] font-semibold p-[5px] justify-center items-center mt-[10px] h-[60px] ">
+                            <div
+                                class="btn-trade-update w-full rounded-[10px] bg-[#ec8104] flex flex-col text-[#fff] font-semibold p-[5px] justify-center items-center mt-[10px] h-[60px] ">
                                 <strong>Thu cũ lên đời</strong>
                                 <span class="text-[12px]">Chỉ từ 26.990.000đ</span>
                             </div>
                         </div>
-                        <div class=" box-more-sale mt-[0.75rem] mb-[0.75rem] w-full border-[1px] border-solid border-[#d1d5db] rounded-[10px] overflow-hidden">
-                            <div class="box-more-sale-title w-full bg-[#d1d5db] text-[14px] p-[10px] font-semibold text-[#0a0a0a]">
+                        <div
+                            class=" box-more-sale mt-[0.75rem] mb-[0.75rem] w-full border-[1px] border-solid border-[#d1d5db] rounded-[10px] overflow-hidden">
+                            <div
+                                class="box-more-sale-title w-full bg-[#d1d5db] text-[14px] p-[10px] font-semibold text-[#0a0a0a]">
                                 ƯU ĐÃI THÊM</div>
                             <div class="sale-container">
                                 <ul>
@@ -332,7 +354,8 @@
                                     </li>
                                     <li class="text-[12px] my-[10px] mx-[5px] flex items-center gap-[3px] ">
                                         <img class="mr-[4px]" src="./img/check-product.svg" alt="">
-                                        <img class="h-[16px] object-cover" src="./img/home_credit_product_sale.webp" alt="">
+                                        <img class="h-[16px] object-cover" src="./img/home_credit_product_sale.webp"
+                                            alt="">
                                         <a class="text-[#000]" href="#">Giảm 400.000đ khi thanh toán bằng thẻ tín dụng
                                             Home Credit</a>
                                     </li>
@@ -349,7 +372,8 @@
             </section>
             <section class="flex flex-wrap mt-[20px] min-h-[250px] mb-[10px]  w-[1200px]  my-[0] mx-[auto] py-[10px]">
                 <hr class="mb-[15px] mt-[10px] bg-[#f5f5f5] w-full">
-                <div class="same-products bg-[#fcf2f2] border-[1px] border-solid border-[#c51f27] text-[#c51f27] rounded-[8px] text-[12px] font-bold max-h-[30px] py-[5px] px-[10px] cursor-pointer w-fit mb-[20px]">
+                <div
+                    class="same-products bg-[#fcf2f2] border-[1px] border-solid border-[#c51f27] text-[#c51f27] rounded-[8px] text-[12px] font-bold max-h-[30px] py-[5px] px-[10px] cursor-pointer w-fit mb-[20px]">
 
                     SẢN PHẨM TƯƠNG TỰ
 
@@ -359,286 +383,102 @@
                         SẢN PHẨM TƯƠNG TỰ
                     </h2>
                 </div>
-                <div class="list-items w-full flex gap-[10px] justify-between">
+                <div class="list-items w-full flex gap-[20px] justify-between overflow-hidden">
                     <!-- ITEM IN HERE -->
-                    <div class="item px-[15px] w-[224.8px] rounded-[15px] shadow-menu relative">
-                        <div class="sale-item-tag absolute top-0 left-0 h-[31px] w-[80px]">
-                            <img class="w-full h-full" src="./img/sale-tag.png" alt="" />
-                            <p class="sale-price absolute top-[50%] translate-y-[-70%] left-[10px] text-[#fff] text-[12px] font-bold">
-                                Giảm 17%
-                            </p>
-                        </div>
-                        <a href="?action=productDetails" class="text-[#444]">
-                            <div class="item-img w-full mt-[25px] flex justify-center">
-                                <img class="w-[160px]" src="./img/iphone-15-pro-max_3.webp" alt="" />
-                            </div>
-                            <div class="item-title mb-[5px]">
-                                <h3 class="text-[#444] line-clamp-3 text-[14px] font-semibold h-[65px] mt-[20px]">
-                                    iPhone 15 Pro Max 256GB | Chính hãng VN/A
-                                </h3>
-                            </div>
-                            <div class="item-price text-nowrap mb-[5px]">
-                                <p class="inline-block new-price text-[16px] text-[#d70018] font-bold">
-                                    28.990.000đ
-                                </p>
-                                <p class="inline-block old-price text-[14px] text-[#707070] line-through font-semibold">
-                                    34.990.000đ
+                    <?php foreach ($sameProducts as $sameProduct) { ?>
+                        <div class="item px-[15px] w-[224.8px] rounded-[15px] shadow-menu relative">
+                            <div class="sale-item-tag absolute top-0 left-0 h-[31px] w-[80px]">
+                                <img class="w-full h-full" src="./img/sale-tag.png" alt="" />
+                                <p
+                                    class="sale-price absolute top-[50%] translate-y-[-70%] left-[10px] text-[#fff] text-[12px] font-bold">
+                                    Giảm <?= $sameProduct['product_sale'] ?>%
                                 </p>
                             </div>
-                            <div class="item-member text-[#444] mb-[5px] text-[11px] flex items-center gap-[3px]">
-                                <span class="text-nowrap">Smember giảm thêm đến</span>
-                                <span class="text-[14px] text-[#d70018] font-bold">290.000đ</span>
-                            </div>
-                            <div class="item-promotion mb-[50px] border-[1px] border-solid border-[#e5e7eb] bg-[#f3f4f6] rounded-[5px] text-[12px] p-[5px]">
-                                <p class="line-clamp-2">
-                                    Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn
-                                    3-6 tháng
-                                </p>
-                            </div>
-                        </a>
-                        <div class="item-bottom flex justify-between mb-[10px]">
-                            <div class="item-rating">
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                            </div>
-                            <div class="item-like">
-                                <span class="inline-block text-[#777] text-[12px]">Yêu thích
-                                </span>
-                                <a href="#">
-                                    <i class="fa-regular text-[#777] fa-heart text-[15px] cursor-pointer"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item px-[15px] w-[224.8px] rounded-[15px] shadow-menu relative">
-                        <div class="sale-item-tag absolute top-0 left-0 h-[31px] w-[80px]">
-                            <img class="w-full h-full" src="./img/sale-tag.png" alt="" />
-                            <p class="sale-price absolute top-[50%] translate-y-[-70%] left-[10px] text-[#fff] text-[12px] font-bold">
-                                Giảm 27%
-                            </p>
-                        </div>
-                        <a href="?action=productDetails" class="text-[#444]">
-                            <div class="item-img w-full mt-[25px] flex justify-center">
-                                <img class="w-[160px]" src="./img/iphone-13_2_.webp" alt="" />
-                            </div>
-                            <div class="item-title mb-[5px]">
-                                <h3 class="text-[#444] line-clamp-3 text-[14px] font-semibold h-[65px] mt-[20px]">
-                                    iPhone 13 128GB | Chính hãng VN/A
-                                </h3>
-                            </div>
-                            <div class="item-price text-nowrap mb-[5px]">
-                                <p class="inline-block new-price text-[16px] text-[#d70018] font-bold">
-                                    13.990.000đ
-                                </p>
-                                <p class="inline-block old-price text-[14px] text-[#707070] line-through font-semibold">
-                                    18.990.000đ
-                                </p>
-                            </div>
-                            <div class="item-member text-[#444] mb-[5px] text-[11px] flex items-center gap-[3px]">
-                                <span class="text-nowrap">Smember giảm thêm đến</span>
-                                <span class="text-[14px] text-[#d70018] font-bold">140.000đ</span>
-                            </div>
-                            <div class="item-promotion mb-[50px] border-[1px] border-solid border-[#e5e7eb] bg-[#f3f4f6] rounded-[5px] text-[12px] p-[5px]">
-                                <p class="line-clamp-2">
-                                    Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn
-                                    3-6 tháng
-                                </p>
-                            </div>
-                        </a>
-                        <div class="item-bottom flex justify-between mb-[10px]">
-                            <div class="item-rating">
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                            </div>
-                            <div class="item-like">
-                                <span class="inline-block text-[#777] text-[12px]">Yêu thích
-                                </span>
-                                <a href="#">
-                                    <i class="fa-regular text-[#777] fa-heart text-[15px] cursor-pointer"></i></a>
+                            <a href="?action=productDetails&id=<?= $sameProduct['product_id'] ?>" class="text-[#444]">
+                                <div class="item-img w-full mt-[25px] flex justify-center">
+                                    <img class="w-[160px]" src="./img/<?= $sameProduct['product_img'] ?>" alt="" />
+                                </div>
+                                <div class="item-title mb-[5px]">
+                                    <h3 class="text-[#444] line-clamp-3 text-[14px] font-semibold h-[65px] mt-[20px]">
+                                        <?= $sameProduct['product_name'] ?>
+                                    </h3>
+                                </div>
+                                <div class="item-price text-nowrap mb-[5px]">
+                                    <p class="inline-block new-price text-[16px] text-[#d70018] font-bold">
+                                        <?= $sameProduct['product_new_price'] ?>đ
+                                    </p>
+                                    <p class="inline-block old-price text-[14px] text-[#707070] line-through font-semibold">
+                                        <?= $sameProduct['product_old_price'] ?>đ
+                                    </p>
+                                </div>
+                                <div class="item-member text-[#444] mb-[5px] text-[11px] flex items-center gap-[3px]">
+                                    <span class="text-nowrap">Smember giảm thêm đến</span>
+                                    <span
+                                        class="text-[14px] text-[#d70018] font-bold"><?= $sameProduct['product_smember'] ?>đ</span>
+                                </div>
+                                <div
+                                    class="item-promotion mb-[50px] border-[1px] border-solid border-[#e5e7eb] bg-[#f3f4f6] rounded-[5px] text-[12px] p-[5px]">
+                                    <p class="line-clamp-2">
+                                        Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn
+                                        3-6 tháng
+                                    </p>
+                                </div>
+                            </a>
+                            <div class="item-bottom flex justify-between mb-[10px]">
+                                <div class="item-rating">
+                                    <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
+                                    <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
+                                    <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
+                                    <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
+                                    <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
+                                </div>
+                                <div class="item-like">
+                                    <span class="inline-block text-[#777] text-[12px]">Yêu thích
+                                    </span>
+                                    <a href="#">
+                                        <i class="fa-regular text-[#777] fa-heart text-[15px] cursor-pointer"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item px-[15px] w-[224.8px] rounded-[15px] shadow-menu relative">
-                        <div class="sale-item-tag absolute top-0 left-0 h-[31px] w-[80px]">
-                            <img class="w-full h-full" src="./img/sale-tag.png" alt="" />
-                            <p class="sale-price absolute top-[50%] translate-y-[-70%] left-[10px] text-[#fff] text-[12px] font-bold">
-                                Giảm 17%
-                            </p>
-                        </div>
-                        <a href="?action=productDetails" class="text-[#444]">
-                            <div class="item-img w-full mt-[25px] flex justify-center">
-                                <img class="w-[160px]" src="./img/ss-s24-ultra-xam-222.webp" alt="" />
-                            </div>
-                            <div class="item-title mb-[5px]">
-                                <h3 class="text-[#444] line-clamp-3 text-[14px] font-semibold h-[65px] mt-[20px]">
-                                    Samsung Galaxy S24 Ultra 12GB 256GB
-                                </h3>
-                            </div>
-                            <div class="item-price text-nowrap mb-[5px]">
-                                <p class="inline-block new-price text-[16px] text-[#d70018] font-bold">
-                                    29.990.000đ
-                                </p>
-                                <p class="inline-block old-price text-[14px] text-[#707070] line-through font-semibold">
-                                    33.990.000đ
-                                </p>
-                            </div>
-                            <div class="item-member text-[#444] mb-[5px] text-[11px] flex items-center gap-[3px]">
-                                <span class="text-nowrap">Smember giảm thêm đến</span>
-                                <span class="text-[14px] text-[#d70018] font-bold">300.000đ</span>
-                            </div>
-                            <div class="item-promotion mb-[50px] border-[1px] border-solid border-[#e5e7eb] bg-[#f3f4f6] rounded-[5px] text-[12px] p-[5px]">
-                                <p class="line-clamp-2">
-                                    Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn
-                                    3-6 tháng
-                                </p>
-                            </div>
-                        </a>
-                        <div class="item-bottom flex justify-between mb-[10px]">
-                            <div class="item-rating">
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                            </div>
-                            <div class="item-like">
-                                <span class="inline-block text-[#777] text-[12px]">Yêu thích
-                                </span>
-                                <a href="#">
-                                    <i class="fa-regular text-[#777] fa-heart text-[15px] cursor-pointer"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item px-[15px] w-[224.8px] rounded-[15px] shadow-menu relative">
-                        <div class="sale-item-tag absolute top-0 left-0 h-[31px] w-[80px]">
-                            <img class="w-full h-full" src="./img/sale-tag.png" alt="" />
-                            <p class="sale-price absolute top-[50%] translate-y-[-70%] left-[10px] text-[#fff] text-[12px] font-bold">
-                                Giảm 17%
-                            </p>
-                        </div>
-                        <a href="?action=productDetails" class="text-[#444]">
-                            <div class="item-img w-full mt-[25px] flex justify-center">
-                                <img class="w-[160px]" src="./img/iphone-15-plus_1__1.webp" alt="" />
-                            </div>
-                            <div class="item-title mb-[5px]">
-                                <h3 class="text-[#444] line-clamp-3 text-[14px] font-semibold h-[65px] mt-[20px]">
-                                    iPhone 15 128GB | Chính hãng VN/A
-                                </h3>
-                            </div>
-                            <div class="item-price text-nowrap mb-[5px]">
-                                <p class="inline-block new-price text-[16px] text-[#d70018] font-bold">
-                                    19.290.000đ
-                                </p>
-                                <p class="inline-block old-price text-[14px] text-[#707070] line-through font-semibold">
-                                    22.990.000đ
-                                </p>
-                            </div>
-                            <div class="item-member text-[#444] mb-[5px] text-[11px] flex items-center gap-[3px]">
-                                <span class="text-nowrap">Smember giảm thêm đến</span>
-                                <span class="text-[14px] text-[#d70018] font-bold">193.000đ</span>
-                            </div>
-                            <div class="item-promotion mb-[50px] border-[1px] border-solid border-[#e5e7eb] bg-[#f3f4f6] rounded-[5px] text-[12px] p-[5px]">
-                                <p class="line-clamp-2">
-                                    Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn
-                                    3-6 tháng
-                                </p>
-                            </div>
-                        </a>
-                        <div class="item-bottom flex justify-between mb-[10px]">
-                            <div class="item-rating">
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                            </div>
-                            <div class="item-like">
-                                <span class="inline-block text-[#777] text-[12px]">Yêu thích
-                                </span>
-                                <a href="#">
-                                    <i class="fa-regular text-[#777] fa-heart text-[15px] cursor-pointer"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item px-[15px] w-[224.8px] rounded-[15px] shadow-menu relative">
-                        <div class="sale-item-tag absolute top-0 left-0 h-[31px] w-[80px]">
-                            <img class="w-full h-full" src="./img/sale-tag.png" alt="" />
-                            <p class="sale-price absolute top-[50%] translate-y-[-70%] left-[10px] text-[#fff] text-[12px] font-bold">
-                                Giảm 17%
-                            </p>
-                        </div>
-                        <a href="?action=productDetails" class="text-[#444]">
-                            <div class="item-img w-full mt-[25px] flex justify-center">
-                                <img class="w-[160px]" src="./img/galaxy-a15-xanh-01.webp" alt="" />
-                            </div>
-                            <div class="item-title mb-[5px]">
-                                <h3 class="text-[#444] line-clamp-3 text-[14px] font-semibold h-[65px] mt-[20px]">
-                                    Samsung Galaxy A15 LTE 8GB 128GB
-                                </h3>
-                            </div>
-                            <div class="item-price text-nowrap mb-[5px]">
-                                <p class="inline-block new-price text-[16px] text-[#d70018] font-bold">
-                                    4.490.000đ
-                                </p>
-                                <p class="inline-block old-price text-[14px] text-[#707070] line-through font-semibold">
-                                    4.990.000đ
-                                </p>
-                            </div>
-                            <div class="item-member text-[#444] mb-[5px] text-[11px] flex items-center gap-[3px]">
-                                <span class="text-nowrap">Smember giảm thêm đến</span>
-                                <span class="text-[14px] text-[#d70018] font-bold">269.000đ</span>
-                            </div>
-                            <div class="item-promotion mb-[50px] border-[1px] border-solid border-[#e5e7eb] bg-[#f3f4f6] rounded-[5px] text-[12px] p-[5px]">
-                                <p class="line-clamp-2">
-                                    Không phí chuyển đổi khi trả góp 0% qua thẻ tín dụng kỳ hạn
-                                    3-6 tháng
-                                </p>
-                            </div>
-                        </a>
-                        <div class="item-bottom flex justify-between mb-[10px]">
-                            <div class="item-rating">
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                                <i class="fa-solid fa-star text-[#f59e0b] text-[15px]"></i>
-                            </div>
-                            <div class="item-like">
-                                <span class="inline-block text-[#777] text-[12px]">Yêu thích
-                                </span>
-                                <a href="#">
-                                    <i class="fa-regular text-[#777] fa-heart text-[15px] cursor-pointer"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php  } ?>
                 </div>
             </section>
-            <div class="comment-container bg-[#f9fafb] rounder-[10px] shadow-menu mt-[15px] p-[10px] w-[1200px] my-0 mx-auto min-h-[250px]">
+            <div
+                class="comment-container bg-[#f9fafb] rounder-[10px] shadow-menu mt-[15px] p-[10px] w-[1200px] my-0 mx-auto min-h-[250px]">
                 <h2 class="uppercase text-[#444] font-semibold text-[22px] mr-[20px] text-nowrap">Bình luận</h2>
 
                 <form action="?action=sendComment" method="POST" class="relative w-full flex gap-[10px] mt-[10px]">
                     <div class="text-area-comment w-[80%]">
                         <img class="absolute left-0" src="./img/imgComment.webp" alt="">
-                        <textarea id="message" name="content" rows="6" class="inline-block p-2.5 w-full text-sm text-gray-900 bg-[#fff] rounded-[10px] shadow-formComment pl-[85px] border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Xin mời để lại câu hỏi, CellphoneS sẽ trả lời lại trong 1h, các câu hỏi sau 22h - 8h sẽ được trả lời vào sáng hôm sau"></textarea>
+                        <textarea id="message" name="content" rows="6"
+                            class="inline-block p-2.5 w-full text-sm text-gray-900 bg-[#fff] rounded-[10px] shadow-formComment pl-[85px] border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Xin mời để lại câu hỏi, CellphoneS sẽ trả lời lại trong 1h, các câu hỏi sau 22h - 8h sẽ được trả lời vào sáng hôm sau"></textarea>
                         <input type="hidden" name="product_id" value="<?= $product['product_id'] ?>">
-                        <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
+                        <?php if (isset($_SESSION['user_id'])) { ?>
+                            <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?>">
+                        <?php  } ?>
                     </div>
-                    <div class="btn-comment w-[15%]">
-                        <button type="submit" name="btn-comment" class="w-[70px] h-[40px] p-[10px] bg-[#d7000e] rounded-[8px] text-[#fff] flex gap-[5px] items-center ">
-                            <div class="icon-paper-plane"><svg height="15" fill=#fff xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path d="M511.6 36.86l-64 415.1c-1.5 9.734-7.375 18.22-15.97 23.05c-4.844 2.719-10.27 4.097-15.68 4.097c-4.188 0-8.319-.8154-12.29-2.472l-122.6-51.1l-50.86 76.29C226.3 508.5 219.8 512 212.8 512C201.3 512 192 502.7 192 491.2v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96l-293.7 264.3L19.69 317.5C8.438 312.8 .8125 302.2 .0625 289.1s5.469-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z">
-                                    </path>
-                                </svg></div>
+                    <?php if (isset($_SESSION['user_name'])) { ?>
+                        <div class="btn-comment w-[15%]">
+                            <button type="submit" name="btn-comment"
+                                class="w-[70px] h-[40px] p-[10px] bg-[#d7000e] rounded-[8px] text-[#fff] flex gap-[5px] items-center ">
+                                <div class="icon-paper-plane"><svg height="15" fill=#fff xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512 512">
+                                        <path
+                                            d="M511.6 36.86l-64 415.1c-1.5 9.734-7.375 18.22-15.97 23.05c-4.844 2.719-10.27 4.097-15.68 4.097c-4.188 0-8.319-.8154-12.29-2.472l-122.6-51.1l-50.86 76.29C226.3 508.5 219.8 512 212.8 512C201.3 512 192 502.7 192 491.2v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96l-293.7 264.3L19.69 317.5C8.438 312.8 .8125 302.2 .0625 289.1s5.469-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z">
+                                        </path>
+                                    </svg></div>
 
-                            Gửi
+                                Gửi
 
-                        </button>
-                    </div>
+                            </button>
+                        </div>
+                    <?php } else { ?>
+                        <span id="openLoginFromComment"
+                            class=" cursor-pointer text-[12px] h-[40px] p-[10px] bg-[#d7000e] rounded-[8px] text-[#fff]   ">
+                            Đăng nhập để bình luận
+                        </span>
+                    <?php } ?>
                 </form>
                 <div class="item-comment">
                     <?php foreach ($allCmt as $cmt) { ?>
@@ -646,7 +486,8 @@
                             <div class="cmt-user-infor mb-[15px] mt-[10px]">
                                 <div class="user-infor  flex items-center gap-[5px]">
                                     <div class="user-img h-[25px] w-[25px]">
-                                        <img class="w-full h-full object-cover rounded-[50%]" src="./img/<?= $cmt['avatar'] ?>" alt="">
+                                        <img class="w-full h-full object-cover rounded-[50%]"
+                                            src="./img/<?= $cmt['avatar'] ?>" alt="">
                                     </div>
                                     <div class="user-name text-[14px] font-bold capitalize text-[#4a4a4a]">
                                         <p>
@@ -665,7 +506,8 @@
                         <div class="cmt-user-infor mb-[15px] mt-[10px]">
                             <div class="user-infor  flex items-center gap-[5px]">
                                 <div class="user-img h-[25px] w-[25px]">
-                                    <img class="w-full h-full object-cover rounded-[50%]" src="./img/user-img-default.png" alt="">
+                                    <img class="w-full h-full object-cover rounded-[50%]"
+                                        src="./img/user-img-default.png" alt="">
                                 </div>
                                 <div class="user-name text-[14px] font-bold capitalize text-[#4a4a4a]">
                                     <p>
@@ -683,10 +525,25 @@
                 </div>
             </div>
         </div>
+        <?php if (isset($_SESSION['sendComment'])) { ?>
+            <script>
+                let commentContainer = document.querySelector(".comment-container");
+                commentContainer.scrollIntoView();
+            </script>
+        <?php
+            unset($_SESSION['sendComment']);
+        } ?>
+        <?php if (isset($_SESSION['emptyComment'])) { ?>
+            <script>
+                alert("Comment của bạn đang bị trống");
+            </script>
+        <?php unset($_SESSION['emptyComment']);
+        } ?>
         <?php include './includes/footer.php' ?>
         <?php include './includes/loginForm.php' ?>
     </div>
 </body>
 <script src="./assets/js/home.js"></script>
+<script src="./assets/js/productDetails.js"></script>
 
 </html>

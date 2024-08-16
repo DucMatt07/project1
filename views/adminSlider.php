@@ -33,18 +33,15 @@
                     </li>
                     <li>
                         <a href="?action=adminUser"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-blue-700 md:p-0">
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                             Người dùng</a>
                     </li>
                     <li>
                         <a href="?action=adminSlider"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Quản
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:text-blue-700 md:p-0">Quản
                             lí slider</a>
                     </li>
                 </ul>
-                <a href="?action=infoUser&userName=<?= $_SESSION['user_name'] ?>"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Đổi
-                    thông tin tài khoản hiện tại</a>
             </div>
         </nav>
 
@@ -52,39 +49,30 @@
     <main class="w-full">
         <table class="w-[80%] my-[0] mx-auto text-center mt-[30px]">
             <tr class="flex gap-[40px] font-bold ">
-                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[30%] text-nowrap">Tên người dùng
+                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">Slider
                 </td>
-                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[30%] text-nowrap">Quyền truy cập</td>
-                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[20%] text-nowrap">Thay đổi quyền truy
-                    cập</td>
-
+                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[20%] text-nowrap">Ảnh slider</td>
+                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[20%] text-nowrap">Tên sản phẩm slider
+                </td>
+                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[20%] text-nowrap">Tiêu đề sản phẩm
+                </td>
+                <td class="border-b-[3px] border-solid border-[#222] p-[10px] w-[10%] text-nowrap">Thay đổi
+                </td>
             </tr>
-            <?php foreach ($users as $user) { ?>
+            <?php foreach ($sliders as $slider) { ?>
             <tr class="flex gap-[40px] relative">
-                <td class="  p-[10px] w-[30%]"><?= $user['user_name'] ?></td>
-                <form action="?action=updateUserRole&id=<?= $user['id'] ?>" method="POST">
-                    <td class="  p-[10px] w-[30%]">
-                        <select name="role" id="">
-                            <option value="<?= $user['role'] ?>"><?= $user['role'] ?></option>
-                            <?php if ($user['role'] == 1) { ?>
-                            <option value="0">0</option>
-                            <?php } else { ?>
-                            <option value="1">1</option>
-                            <?php  } ?>
-                        </select>
-                    </td>
-                    <td class="flex justify-center items-center p-[10px] w-[20%]"><button type="submit"
-                            name="btn-update-role"
-                            class="update-user rounded-[5px] bg-[red] py-[10px] px-[30px] text-center text-[#fff]">Cập
-                            nhật</button>
-                    </td>
-                </form>
+                <td class=" p-[10px] w-[10%]"><?= $slider['id'] ?></td>
+                <td class=" p-[10px] w-[20%]"><img src="./img/<?= $slider['img'] ?>" alt="">
+                <td class=" p-[10px] w-[20%]"><?= $slider['slider_product_name'] ?></td>
+                <td class=" p-[10px] w-[20%]"><?= $slider['content'] ?></td>
+                <td class=" p-[10px] w-[10%] flex justify-center items-center text-nowrap"><a
+                        class="rounded-[5px] bg-[green] py-[10px] px-[30px] text-center text-[#fff]"
+                        href="?action=goToUpdateSlider&id=<?= $slider['id'] ?>">Thay đổi</a></td>
             </tr>
             <tr class="w-full border-b-[3px] border-solid border-[#222]"></tr>
             <?php } ?>
         </table>
     </main>
 </body>
-
 
 </html>
